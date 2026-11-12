@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ví Nhỏ giúp sinh viên ghi khoản chi và theo dõi ngân sách từng tháng.">
+<meta name="theme-color" content="#f5f6f1">
+<title>Ví Nhỏ — Quản lý chi tiêu</title>
+<link rel="stylesheet" href="./style.css">
+<script defer src="./model.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark" data-icon="wallet"></span><div><strong>Ví Nhỏ<span>.</span></strong><small>QUẢN LÝ CHI TIÊU</small></div></div>
+    <div class="nav-label">KHÔNG GIAN CỦA BẠN</div>
+    <nav aria-label="Điều hướng chính">
+      <button data-page="home"><span data-icon="grid"></span>Tổng quan</button>
+      <button data-page="transactions"><span data-icon="swap"></span>Khoản chi</button>
+      <button data-page="budgets"><span data-icon="target"></span>Ngân sách</button>
+      <button data-page="reports"><span data-icon="chart"></span>Báo cáo</button>
+    </nav>
+    <div class="sidebar-footer">
+      <span class="avatar">VN</span><div><strong>Ví cá nhân</strong><small>Dữ liệu trên thiết bị</small></div>
+    </div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="crumb"><span>Ví của bạn</span><span> / </span><strong id="breadcrumb"></strong></div><button class="demo-badge" id="demo-menu"><span></span>Chế độ demo</button></header>
+    <div class="workspace">
+      <div class="page-head">
+        <div><div class="eyebrow" id="eyebrow">VÍ CÁ NHÂN</div><h1 id="page-title">Tổng quan chi tiêu</h1><p id="page-copy">Theo dõi chi tiêu và ngân sách của bạn trong tháng.</p></div>
+        <div class="page-actions"><label class="period"><span data-icon="calendar"></span><input id="month" type="month" min="2000-01" max="2099-12" placeholder="YYYY-MM" pattern="20[0-9]{2}-(0[1-9]|1[0-2])" title="Nhập tháng theo dạng YYYY-MM, ví dụ 2026-11" aria-label="Tháng báo cáo"></label><button id="add" class="primary"><span data-icon="plus"></span>Thêm khoản chi</button></div>
+      </div>
+      <div id="view"></div>
+      <footer class="footnote"><span>Ví Nhỏ · Dự án FinTech</span><span>Đơn vị tiền tệ: VND</span></footer>
+    </div>
+  </main>
+</div>
+<dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<noscript>Hãy bật JavaScript để dùng Ví Nhỏ.</noscript>
+</body>
+</html>
